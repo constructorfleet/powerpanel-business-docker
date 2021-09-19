@@ -45,13 +45,13 @@ if {$force_conservative} {
 set timeout -1
 spawn ./ppb-linux-x86_64.sh
 match_max 100000
-expect -exact "Unpacking JRE ...\r
+expect -ex "Unpacking JRE ...\r
 Starting Installer ...\r
 \[?7hThis will install CyberPower PowerPanel Business on your computer.\r
 OK \[o, Enter\], Cancel \[c\]\r
 "
 send -- "o\r"
-expect -exact "o\r
+expect -ex "o\r
 Click Next to continue, or Cancel to exit Setup.\r
 Please read the following License Agreement. You must accept the terms of\r
 this agreement before continuing with the installation.\r
@@ -82,7 +82,7 @@ on any compatible computer or device that you own or control.\r
 \[Enter\]\r
 "
 send -- "\r"
-expect -exact "\r
+expect -ex "\r
 3.	License Grant. You are hereby granted a personal, non-transferable and\r
 non-sublicenseable, non-exclusive license to use the Software. Except for\r
 the license aforesaid, you are granted no other rights or licenses, by\r
@@ -109,7 +109,7 @@ performance. You may not use the Software in any device or system in which a\r
 \[Enter\]\r
 "
 send -- "\r"
-expect -exact "\r
+expect -ex "\r
 malfunction of the Software would result in foreseeable risk of injury or\r
 death to any person. This includes operation of nuclear facilities, aircraft\r
 navigation or communication systems and air traffic control.\r
@@ -136,7 +136,7 @@ party content that is contained in the Software or may be accessed through\r
 \[Enter\]\r
 "
 send -- "\r"
-expect -exact "\r
+expect -ex "\r
 the use of the Software, is the property of the respective content owners\r
 and may be protected by applicable intellectual property related laws and\r
 treaties.\r
@@ -163,7 +163,7 @@ NAVIGATION OR COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, LIFE SUPPORT OR\r
 \[Enter\]\r
 "
 send -- "\r"
-expect -exact "\r
+expect -ex "\r
 WEAPONS SYSTEMS.\r
 \r
 8.	Limitation of Liability. IN NO EVENT WILL CYBER POWER SYSTEMS, INC., ITS\r
@@ -190,7 +190,7 @@ incidental, consequential or special damages, or the exclusion of implied\r
 \[Enter\]\r
 "
 send -- "\r"
-expect -exact "\r
+expect -ex "\r
 warranties or limitations on how long an implied warranty may last, so the\r
 above limitations may not apply to you.\r
 \r
@@ -217,7 +217,7 @@ with any trademarks or service marks of Cyber Power Systems, Inc. or of its\r
 \[Enter\]\r
 "
 send -- "\r"
-expect -exact "\r
+expect -ex "\r
 licensors or suppliers.\r
 \r
 11.	Termination. This License is effective until terminated. Your rights\r
@@ -244,7 +244,7 @@ any disputes arising out of or relating to this License exclusive\r
 \[Enter\]\r
 "
 send -- "\r"
-expect -exact "\r
+expect -ex "\r
 jurisdiction and venue will be in the courts in the largest city in your\r
 country within 200 miles of where you live.\r
 b.	Europe. If you acquired the Software in Europe, this License will be\r
@@ -271,7 +271,7 @@ and venue will be in the courts in the largest city in your country within\r
 \[Enter\]\r
 "
 send -- "\r"
-expect -exact "\r
+expect -ex "\r
 a.	If any part of this License is found void and unenforceable under\r
 applicable laws, it will not affect the validity of the rest of the License,\r
 which shall remain valid and enforceable according to its terms. This\r
@@ -289,14 +289,14 @@ I accept the agreement\r
 Yes \[1\], No \[2\]\r
 "
 send -- "1\r"
-expect -exact "1\r
+expect -ex "1\r
 Select the folder where you would like CyberPower PowerPanel Business to be\r
 installed, then click Next.\r
 Where should CyberPower PowerPanel Business be installed?\r
 \[/usr/local/PPB\]\r
 "
 send -- "/usr/local/ppbe\r"
-expect -exact "/usr/local/ppbe\r
+expect -ex "/usr/local/ppbe\r
 Which components should be installed?\r
 1: Local\r
 2: Remote\r
