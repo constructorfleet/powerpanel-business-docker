@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
-ENV POWERPANEL_VERSION=440
+ARG PPB_VERSION=440
+ENV POWERPANEL_VERSION=PPB_VERSION
 
 RUN apt-get update && apt-get install -y \
       curl \
@@ -21,6 +22,7 @@ RUN chmod +x install.exp && expect ./install.exp && rm ppb-linux-x86_64.sh && rm
 EXPOSE 3052
 EXPOSE 53568
 VOLUME ["/usr/local/ppbe/db_local/"]
+VOLUME ["/usr/local/ppbe/db_remote/"]
 
 HEALTHCHECK CMD curl -vs --fail http://127.0.0.1:3052/ || exit 1
 ENTRYPOINT ["/usr/local/ppbe/ppbed", "run"]
