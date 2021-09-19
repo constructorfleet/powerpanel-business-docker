@@ -58,7 +58,7 @@ Please select a language:\r
 8: Japanese\r
 9: Polish\r
 10: Spanish\r
-[1 - 10]\r
+\[1 - 10]]\r
 "
 send --"5\r"
 expect -
