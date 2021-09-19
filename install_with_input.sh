@@ -11,10 +11,7 @@ o
 
 
 
-
-
-
 1
 /usr/local/ppbe
-${ppb_flavor}
+2
 EOF
