@@ -1,6 +1,10 @@
-FROM ubuntu:latest
+FROM alpine:latest AS copier
 
 ARG PPB_FLAVOR=remote
+
+COPY "install-${PPB_FLAVOR}.exp" install.exp
+
+FROM ubuntu:latest
 ARG PPB_VERSION=440
 ENV POWERPANEL_VERSION=PPB_VERSION
 
@@ -17,7 +21,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl -s -L https://dl4jz3rbrsfum.cloudfront.net/software/ppb${POWERPANEL_VERSION}-linux-x86_x64.sh -o ppb-linux-x86_64.sh \
  && chmod +x ppb-linux-x86_64.sh
 
-COPY "install-${PPB_FLAVOR}.exp" install.exp
+COPY --from=copier install.exp install.exp
 RUN chmod +x install.exp && expect ./install.exp && rm ppb-linux-x86_64.sh && rm install.exp
 
 EXPOSE 3052
