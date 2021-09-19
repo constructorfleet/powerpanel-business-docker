@@ -18,7 +18,6 @@ RUN curl -s -L https://dl4jz3rbrsfum.cloudfront.net/software/ppb${POWERPANEL_VER
  && chmod +x ppb-linux-x86_64.sh
 
 COPY "install-${PPB_FLAVOR}.exp" install.exp
-COPY --from=copier install.exp install.exp
 RUN chmod +x install.exp && expect ./install.exp && rm ppb-linux-x86_64.sh && rm install.exp
 
 EXPOSE 3052
