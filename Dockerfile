@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 ARG PPB_FLAVOR=remote
 ARG PPB_VERSION=440
-ENV POWERPANEL_VERSION=PPB_VERSION
+ENV POWERPANEL_VERSION=$PPB_VERSION
 
 RUN apt-get update && apt-get install -y \
       curl \
