@@ -33,7 +33,7 @@ def build(version):
         tagging_cmd = " ".join("--tag {}".format(tagging) for tagging in tagging_list)
 
         # build the big docker build command
-        build_command = f'docker build -f {filename} . --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` {tagging_cmd}'
+        build_command = f'docker build -f {filename} . --build-arg PPB_VERSION="{version}" --build_arg PPB_FLAVOR="{variant}" --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` {tagging_cmd}'
 
         # build the image
         print(build_command)
