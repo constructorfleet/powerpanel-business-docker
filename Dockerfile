@@ -16,8 +16,8 @@ RUN apt-get update && apt-get install -y \
 RUN curl -s -L https://dl4jz3rbrsfum.cloudfront.net/software/ppb${POWERPANEL_VERSION}-linux-x86_x64.sh -o ppb-linux-x86_64.sh \
  && chmod +x ppb-linux-x86_64.sh
 
-COPY "install-${PPB_FLAVOR}.exp" install.exp
-RUN chmod +x install.exp && expect ./install.exp && rm ppb-linux-x86_64.sh && rm install.exp
+COPY install_with_input.sh install_with_input.sh
+RUN chmod +x install_with_input.sh && ./install_with_input.sh && rm ppb-linux-x86_64.sh && rm install_with_input.sh
 
 EXPOSE 3052
 EXPOSE 53568
