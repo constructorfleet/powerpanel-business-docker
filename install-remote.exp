@@ -52,7 +52,7 @@ Please select a language:\r
 2: Chinese (Traditional)\r
 3: Croatian\r
 4: Czech\r
-5: English [Enter]\r
+5: English \[Enter\]\r
 6: French\r
 7: German\r
 8: Japanese\r
@@ -66,7 +66,7 @@ expect -
 OK \[o, Enter\], Cancel \[c\]\r
 "
 send -- "o\r"
-expect 
+expect
 
 a "o\r
 Click Next to continue, or Cancel to exit Setup.\r
